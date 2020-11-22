@@ -81,7 +81,7 @@ class RMRacerCV:
             sign,rect = None,None
             if not (img_arr==self.img_arr_draw).all():
                 sign,rect = detect(img_arr)
-            sign = None
+            #sign = None
             if rect != None:
                 x,y,w,h = rect
                 cv2.rectangle(img_arr, (x,y), (x+w, y+h), (0,0,255), 2)
