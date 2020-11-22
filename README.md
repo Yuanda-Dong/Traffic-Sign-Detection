@@ -9,5 +9,5 @@
 TODO
 
 ## Content
-1. [Simulator]()
-2. [Source code of Sign Detection Model]()
+1. [Simulator](https://github.com/Yuanda-Dong/Client-Final-Deployment/tree/main/Simulator)
+2. [Source code of Sign Detection Model](https://github.com/Yuanda-Dong/Client-Final-Deployment/tree/main/SourceCode)
