@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Sign_Classification_Unity</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Sign_Classification_Unity</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/yiranjing/Desktop/comp3988_t17b_group1/sign_detection_code/Yiran/Sign_Classification_Unity.py">/Users/yiranjing/Desktop/comp3988_t17b_group1/sign_detection_code/Yiran/Sign_Classification_Unity.py</a></font></td></tr></table>
+    <p><tt>Traffic&nbsp;Sign&nbsp;Classification&nbsp;using&nbsp;NN<br>
+&nbsp;<br>
+Author:&nbsp;Yiran&nbsp;Jing<br>
+Date:&nbsp;Nov&nbsp;2020<br>
+Group:&nbsp;CP32-17b1&nbsp;(COMP3988&nbsp;group&nbsp;1)<br>
+&nbsp;<br>
+#&nbsp;Our&nbsp;model&nbsp;can&nbsp;classify&nbsp;the&nbsp;input&nbsp;images&nbsp;(collected&nbsp;by&nbsp;the&nbsp;donkey&nbsp;car)&nbsp;into&nbsp;5&nbsp;main&nbsp;classes:<br>
+#&nbsp;-&nbsp;right-turining&nbsp;(including&nbsp;blue,&nbsp;black-turning&nbsp;sign)<br>
+#&nbsp;-&nbsp;left-turining&nbsp;(including&nbsp;blue,&nbsp;black-turning&nbsp;sign)<br>
+#&nbsp;-&nbsp;stop<br>
+#&nbsp;-&nbsp;speed_50_white<br>
+#&nbsp;-&nbsp;park&nbsp;(yellow&nbsp;and&nbsp;green)<br>
+#&nbsp;<br>
+#&nbsp;<br>
+#&nbsp;##&nbsp;Content&nbsp;<br>
+#&nbsp;1.&nbsp;**Obstract&nbsp;interested&nbsp;area&nbsp;(detect&nbsp;based&nbsp;on&nbsp;color)&nbsp;using&nbsp;openCV**<br>
+#&nbsp;1.&nbsp;**EDA**<br>
+#&nbsp;2.&nbsp;**Feature&nbsp;Engineering**<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Configure&nbsp;the&nbsp;dataset&nbsp;for&nbsp;performance&nbsp;(all&nbsp;100&nbsp;*&nbsp;100)<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Standardize&nbsp;the&nbsp;data<br>
+#&nbsp;3.&nbsp;**Train&nbsp;model**<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;20%&nbsp;as&nbsp;test&nbsp;data,&nbsp;80%&nbsp;as&nbsp;train&nbsp;data<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;three&nbsp;convolution&nbsp;blocks<br>
+#&nbsp;4.&nbsp;**Model&nbsp;evaluation**<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Confusion&nbsp;Matrix<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Classification&nbsp;report&nbsp;for&nbsp;each&nbsp;class<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;The&nbsp;overall&nbsp;TEST&nbsp;accuracy&nbsp;is&nbsp;100%.&nbsp;The&nbsp;model&nbsp;performances&nbsp;very&nbsp;good&nbsp;overall.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PIL.Image.html">PIL.Image</a><br>
+<a href="PIL.ImageDraw.html">PIL.ImageDraw</a><br>
+<a href="PIL.ImageFont.html">PIL.ImageFont</a><br>
+<a href="PIL.html">PIL</a><br>
+<a href="config.html">config</a><br>
+</td><td width="25%" valign=top><a href="cv2.cv2.html">cv2.cv2</a><br>
+<a href="glob.html">glob</a><br>
+<a href="tensorflow.keras.html">tensorflow.keras</a><br>
+<a href="tensorflow.keras.layers.html">tensorflow.keras.layers</a><br>
+<a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="pathlib.html">pathlib</a><br>
+<a href="platform.html">platform</a><br>
+<a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="shutil.html">shutil</a><br>
+</td><td width="25%" valign=top><a href="seaborn.html">seaborn</a><br>
+<a href="sys.html">sys</a><br>
+<a href="tempfile.html">tempfile</a><br>
+<a href="tensorflow.html">tensorflow</a><br>
+<a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-listdir"><strong>listdir</strong></a>(path=None)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;containing&nbsp;the&nbsp;names&nbsp;of&nbsp;the&nbsp;files&nbsp;in&nbsp;the&nbsp;directory.<br>
+&nbsp;<br>
+path&nbsp;can&nbsp;be&nbsp;specified&nbsp;as&nbsp;either&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;a&nbsp;path-like&nbsp;object.&nbsp;&nbsp;If&nbsp;path&nbsp;is&nbsp;bytes,<br>
+&nbsp;&nbsp;the&nbsp;filenames&nbsp;returned&nbsp;will&nbsp;also&nbsp;be&nbsp;bytes;&nbsp;in&nbsp;all&nbsp;other&nbsp;circumstances<br>
+&nbsp;&nbsp;the&nbsp;filenames&nbsp;returned&nbsp;will&nbsp;be&nbsp;str.<br>
+If&nbsp;path&nbsp;is&nbsp;None,&nbsp;uses&nbsp;the&nbsp;path='.'.<br>
+On&nbsp;some&nbsp;platforms,&nbsp;path&nbsp;may&nbsp;also&nbsp;be&nbsp;specified&nbsp;as&nbsp;an&nbsp;open&nbsp;file&nbsp;descriptor;\<br>
+&nbsp;&nbsp;the&nbsp;file&nbsp;descriptor&nbsp;must&nbsp;refer&nbsp;to&nbsp;a&nbsp;directory.<br>
+&nbsp;&nbsp;If&nbsp;this&nbsp;functionality&nbsp;is&nbsp;unavailable,&nbsp;using&nbsp;it&nbsp;raises&nbsp;NotImplementedError.<br>
+&nbsp;<br>
+The&nbsp;list&nbsp;is&nbsp;in&nbsp;arbitrary&nbsp;order.&nbsp;&nbsp;It&nbsp;does&nbsp;not&nbsp;include&nbsp;the&nbsp;special<br>
+entries&nbsp;'.'&nbsp;and&nbsp;'..'&nbsp;even&nbsp;if&nbsp;they&nbsp;are&nbsp;present&nbsp;in&nbsp;the&nbsp;directory.</tt></dd></dl>
+ <dl><dt><a name="-rename"><strong>rename</strong></a>(src, dst, *, src_dir_fd=None, dst_dir_fd=None)</dt><dd><tt>Rename&nbsp;a&nbsp;file&nbsp;or&nbsp;directory.<br>
+&nbsp;<br>
+If&nbsp;either&nbsp;src_dir_fd&nbsp;or&nbsp;dst_dir_fd&nbsp;is&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a&nbsp;file<br>
+&nbsp;&nbsp;descriptor&nbsp;open&nbsp;to&nbsp;a&nbsp;directory,&nbsp;and&nbsp;the&nbsp;respective&nbsp;path&nbsp;string&nbsp;(src&nbsp;or&nbsp;dst)<br>
+&nbsp;&nbsp;should&nbsp;be&nbsp;relative;&nbsp;the&nbsp;path&nbsp;will&nbsp;then&nbsp;be&nbsp;relative&nbsp;to&nbsp;that&nbsp;directory.<br>
+src_dir_fd&nbsp;and&nbsp;dst_dir_fd,&nbsp;may&nbsp;not&nbsp;be&nbsp;implemented&nbsp;on&nbsp;your&nbsp;platform.<br>
+&nbsp;&nbsp;If&nbsp;they&nbsp;are&nbsp;unavailable,&nbsp;using&nbsp;them&nbsp;will&nbsp;raise&nbsp;a&nbsp;NotImplementedError.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>abs_path</strong> = 'data/'<br>
+<strong>batch_size</strong> = 64<br>
+<strong>canny_low</strong> = 50<br>
+<strong>canny_upper</strong> = 150<br>
+<strong>class_names</strong> = ['stop/stop_simulator/', 'stop/stop_realWorld/', 'right/right_blue/', 'right/right_realWorldImage/', 'right/right_black/', 'left/left_blue/', 'left/left_real_worldImage/', 'left/left_black/', 'left/left_blue_f1/', 'park/park_green/', 'park/park_yellow/', 'speed_50_white/speed_50_white_simulator/', 'speed_50_white/speed_50_realworldImage/']<br>
+<strong>epochs</strong> = 8<br>
+<strong>fail_openCV</strong> = 'data/fail_openCV/'<br>
+<strong>folder</strong> = 'data'<br>
+<strong>img_height</strong> = 100<br>
+<strong>img_width</strong> = 100<br>
+<strong>kernel</strong> = array([[1, 1, 1],
+       [1, 1, 1],
+       [1, 1, 1]], dtype=uint8)<br>
+<strong>labels</strong> = ['stop', 'right', 'left', 'park', 'speed_50_white']<br>
+<strong>learning_rate</strong> = 0.001<br>
+<strong>lower_black_sign</strong> = array([95,  6, 40])<br>
+<strong>lower_blue_sign</strong> = array([ 90, 190, 150])<br>
+<strong>lower_blue_sign_bgr</strong> = array([50,  0,  0])<br>
+<strong>lower_green_park</strong> = array([ 43, 180, 130])<br>
+<strong>lower_orange2_cone</strong> = array([170,  60,  60])<br>
+<strong>lower_orange_cone</strong> = array([ 0, 60, 60])<br>
+<strong>lower_red2_stop</strong> = array([  6, 150, 100])<br>
+<strong>lower_red_stop</strong> = array([160,  75,  50])<br>
+<strong>lower_white_sign</strong> = array([  0,   0, 150])<br>
+<strong>lower_white_sign2</strong> = array([ 91,  10, 126])<br>
+<strong>lower_yello_park</strong> = array([ 25, 190, 165])<br>
+<strong>my_hsv_lower</strong> = array([100, 100,  30])<br>
+<strong>my_hsv_upper</strong> = array([125, 255, 160])<br>
+<strong>pent_turn_lower</strong> = array([ 20,   0, 121])<br>
+<strong>pent_turn_upper</strong> = array([179,  55, 153])<br>
+<strong>roi_test_misclass_path</strong> = 'data/test_roi/'<br>
+<strong>roi_test_path</strong> = 'data/testCNN_roi/'<br>
+<strong>roi_train_path</strong> = 'data/trainCNN_roi/'<br>
+<strong>stop_kernel</strong> = array([[1, 1, 1, 1, 1, 1, 1, 1, 1],
+       [1, 1...       [1, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=uint8)<br>
+<strong>testCNN_roi</strong> = '/testfilterCNN_roi'<br>
+<strong>test_path</strong> = 'data/test/'<br>
+<strong>trainCNN_roi</strong> = '/trainfilterCNN_roi'<br>
+<strong>train_path</strong> = 'data/train/'<br>
+<strong>upper_black_sign</strong> = array([115,  55,  90])<br>
+<strong>upper_blue_sign</strong> = array([120, 255, 255])<br>
+<strong>upper_blue_sign_bgr</strong> = array([255,  15,  15])<br>
+<strong>upper_green_park</strong> = array([ 46, 255, 255])<br>
+<strong>upper_orange2_cone</strong> = array([180, 180, 120])<br>
+<strong>upper_orange_cone</strong> = array([ 10, 180, 120])<br>
+<strong>upper_red2_stop</strong> = array([ 10, 255, 255])<br>
+<strong>upper_red_stop</strong> = array([180, 255, 255])<br>
+<strong>upper_white_sign</strong> = array([255,  55, 255])<br>
+<strong>upper_white_sign2</strong> = array([133,  67, 161])<br>
+<strong>upper_yello_park</strong> = array([ 29, 255, 255])</td></tr></table>
+</body></html>

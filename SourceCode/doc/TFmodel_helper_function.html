@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module TFmodel_helper_function</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>TFmodel_helper_function</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/yiranjing/Desktop/comp3988_t17b_group1/sign_detection_code/Yiran/TFmodel_helper_function.py">/Users/yiranjing/Desktop/comp3988_t17b_group1/sign_detection_code/Yiran/TFmodel_helper_function.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PIL.Image.html">PIL.Image</a><br>
+<a href="PIL.ImageDraw.html">PIL.ImageDraw</a><br>
+<a href="PIL.ImageFont.html">PIL.ImageFont</a><br>
+<a href="PIL.html">PIL</a><br>
+<a href="config.html">config</a><br>
+</td><td width="25%" valign=top><a href="cv2.cv2.html">cv2.cv2</a><br>
+<a href="glob.html">glob</a><br>
+<a href="tensorflow.keras.html">tensorflow.keras</a><br>
+<a href="tensorflow.keras.layers.html">tensorflow.keras.layers</a><br>
+<a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="pathlib.html">pathlib</a><br>
+<a href="platform.html">platform</a><br>
+<a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="shutil.html">shutil</a><br>
+</td><td width="25%" valign=top><a href="seaborn.html">seaborn</a><br>
+<a href="sys.html">sys</a><br>
+<a href="tempfile.html">tempfile</a><br>
+<a href="tensorflow.html">tensorflow</a><br>
+<a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-dataset_config"><strong>dataset_config</strong></a>(train_ds, val_ds, test_ds)</dt><dd><tt>Configure&nbsp;the&nbsp;dataset&nbsp;for&nbsp;performance<br>
+&nbsp;<br>
+parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;train_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;val_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;<br>
+&nbsp;<br>
+return:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;train_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;val_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset</tt></dd></dl>
+ <dl><dt><a name="-draw_confusion_matrix"><strong>draw_confusion_matrix</strong></a>(model, val_ds, class_names)</dt><dd><tt>Plot&nbsp;confusion&nbsp;matrix&nbsp;and&nbsp;classification&nbsp;report<br>
+&nbsp;<br>
+parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class_names:&nbsp;list&nbsp;of&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;val_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset</tt></dd></dl>
+ <dl><dt><a name="-draw_misclassification_images"><strong>draw_misclassification_images</strong></a>(image, class_name, predicted_class, picture, image_path)</dt><dd><tt>draw&nbsp;the&nbsp;misclassification&nbsp;images&nbsp;produced&nbsp;by&nbsp;the&nbsp;test&nbsp;function</tt></dd></dl>
+ <dl><dt><a name="-image_proprecessing_openCV"><strong>image_proprecessing_openCV</strong></a>(class_folders, train_path, roi_train_path)</dt><dd><tt>OpenCV&nbsp;pre-processing&nbsp;<br>
+&nbsp;<br>
+parameters:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class_folders:&nbsp;list,&nbsp;the&nbsp;folder&nbsp;name&nbsp;of&nbsp;raw&nbsp;images&nbsp;need&nbsp;to&nbsp;be&nbsp;processed&nbsp;by&nbsp;openCV<br>
+&nbsp;&nbsp;&nbsp;&nbsp;train_path:&nbsp;the&nbsp;path&nbsp;of&nbsp;train&nbsp;dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;roi_train_path:&nbsp;the&nbsp;path&nbsp;that&nbsp;roi&nbsp;output&nbsp;images&nbsp;will&nbsp;be&nbsp;written&nbsp;to.</tt></dd></dl>
+ <dl><dt><a name="-listdir"><strong>listdir</strong></a>(path=None)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;containing&nbsp;the&nbsp;names&nbsp;of&nbsp;the&nbsp;files&nbsp;in&nbsp;the&nbsp;directory.<br>
+&nbsp;<br>
+path&nbsp;can&nbsp;be&nbsp;specified&nbsp;as&nbsp;either&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;a&nbsp;path-like&nbsp;object.&nbsp;&nbsp;If&nbsp;path&nbsp;is&nbsp;bytes,<br>
+&nbsp;&nbsp;the&nbsp;filenames&nbsp;returned&nbsp;will&nbsp;also&nbsp;be&nbsp;bytes;&nbsp;in&nbsp;all&nbsp;other&nbsp;circumstances<br>
+&nbsp;&nbsp;the&nbsp;filenames&nbsp;returned&nbsp;will&nbsp;be&nbsp;str.<br>
+If&nbsp;path&nbsp;is&nbsp;None,&nbsp;uses&nbsp;the&nbsp;path='.'.<br>
+On&nbsp;some&nbsp;platforms,&nbsp;path&nbsp;may&nbsp;also&nbsp;be&nbsp;specified&nbsp;as&nbsp;an&nbsp;open&nbsp;file&nbsp;descriptor;\<br>
+&nbsp;&nbsp;the&nbsp;file&nbsp;descriptor&nbsp;must&nbsp;refer&nbsp;to&nbsp;a&nbsp;directory.<br>
+&nbsp;&nbsp;If&nbsp;this&nbsp;functionality&nbsp;is&nbsp;unavailable,&nbsp;using&nbsp;it&nbsp;raises&nbsp;NotImplementedError.<br>
+&nbsp;<br>
+The&nbsp;list&nbsp;is&nbsp;in&nbsp;arbitrary&nbsp;order.&nbsp;&nbsp;It&nbsp;does&nbsp;not&nbsp;include&nbsp;the&nbsp;special<br>
+entries&nbsp;'.'&nbsp;and&nbsp;'..'&nbsp;even&nbsp;if&nbsp;they&nbsp;are&nbsp;present&nbsp;in&nbsp;the&nbsp;directory.</tt></dd></dl>
+ <dl><dt><a name="-load_testing_data"><strong>load_testing_data</strong></a>(folder, test_path)</dt><dd><tt>load&nbsp;the&nbsp;testingdata&nbsp;folder,&nbsp;and&nbsp;print&nbsp;the&nbsp;number&nbsp;of&nbsp;images&nbsp;in&nbsp;each&nbsp;class<br>
+&nbsp;<br>
+parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;folder:&nbsp;(string)&nbsp;the&nbsp;name&nbsp;of&nbsp;dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_path:&nbsp;(string)&nbsp;the&nbsp;folder&nbsp;name&nbsp;of&nbsp;test&nbsp;dataset<br>
+&nbsp;<br>
+output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_data_dir:&nbsp;the&nbsp;path&nbsp;of&nbsp;testing&nbsp;dataset</tt></dd></dl>
+ <dl><dt><a name="-load_training_data"><strong>load_training_data</strong></a>(folder, train_path)</dt><dd><tt>load&nbsp;the&nbsp;training&nbsp;data&nbsp;folder,&nbsp;and&nbsp;print&nbsp;the&nbsp;number&nbsp;of&nbsp;images&nbsp;in&nbsp;each&nbsp;class<br>
+&nbsp;<br>
+parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;folder:&nbsp;(string)&nbsp;the&nbsp;name&nbsp;of&nbsp;dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;train_path:&nbsp;(string)&nbsp;the&nbsp;folder&nbsp;name&nbsp;of&nbsp;training&nbsp;dataset<br>
+&nbsp;<br>
+output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_dir:&nbsp;the&nbsp;path&nbsp;of&nbsp;training&nbsp;dataset</tt></dd></dl>
+ <dl><dt><a name="-plot_normalized_confusion_matrix"><strong>plot_normalized_confusion_matrix</strong></a>(y_true, y_pred, title, class_names)</dt><dd><tt>helper&nbsp;function&nbsp;of&nbsp;draw_missclassification_images<br>
+draw&nbsp;confusion&nbsp;matrix&nbsp;based&nbsp;on&nbsp;the&nbsp;raw&nbsp;matrix,&nbsp;adding&nbsp;label<br>
+&nbsp;<br>
+parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class_names:&nbsp;list&nbsp;of&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y_true:&nbsp;panda&nbsp;series<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y_pred:&nbsp;panda&nbsp;series</tt></dd></dl>
+ <dl><dt><a name="-plot_train_result"><strong>plot_train_result</strong></a>(model_result, epoch)</dt><dd><tt>Plot&nbsp;accuracy&nbsp;and&nbsp;loss&nbsp;of&nbsp;training&nbsp;data&nbsp;and&nbsp;validation&nbsp;data</tt></dd></dl>
+ <dl><dt><a name="-rename"><strong>rename</strong></a>(src, dst, *, src_dir_fd=None, dst_dir_fd=None)</dt><dd><tt>Rename&nbsp;a&nbsp;file&nbsp;or&nbsp;directory.<br>
+&nbsp;<br>
+If&nbsp;either&nbsp;src_dir_fd&nbsp;or&nbsp;dst_dir_fd&nbsp;is&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a&nbsp;file<br>
+&nbsp;&nbsp;descriptor&nbsp;open&nbsp;to&nbsp;a&nbsp;directory,&nbsp;and&nbsp;the&nbsp;respective&nbsp;path&nbsp;string&nbsp;(src&nbsp;or&nbsp;dst)<br>
+&nbsp;&nbsp;should&nbsp;be&nbsp;relative;&nbsp;the&nbsp;path&nbsp;will&nbsp;then&nbsp;be&nbsp;relative&nbsp;to&nbsp;that&nbsp;directory.<br>
+src_dir_fd&nbsp;and&nbsp;dst_dir_fd,&nbsp;may&nbsp;not&nbsp;be&nbsp;implemented&nbsp;on&nbsp;your&nbsp;platform.<br>
+&nbsp;&nbsp;If&nbsp;they&nbsp;are&nbsp;unavailable,&nbsp;using&nbsp;them&nbsp;will&nbsp;raise&nbsp;a&nbsp;NotImplementedError.</tt></dd></dl>
+ <dl><dt><a name="-separate_train_val_test_data"><strong>separate_train_val_test_data</strong></a>(data_dir, test_data_dir)</dt><dd><tt>separate&nbsp;train,&nbsp;validation,&nbsp;and&nbsp;test&nbsp;data,&nbsp;and&nbsp;resize&nbsp;the&nbsp;image<br>
+we&nbsp;split&nbsp;20%&nbsp;data&nbsp;from&nbsp;train&nbsp;as&nbsp;the&nbsp;validation&nbsp;set<br>
+&nbsp;<br>
+&nbsp;<br>
+parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_dir:&nbsp;relative&nbsp;path&nbsp;of&nbsp;train&nbsp;dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_data_dir:&nbsp;relative&nbsp;path&nbsp;of&nbsp;test&nbsp;dataset<br>
+&nbsp;<br>
+return:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;train_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;val_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset</tt></dd></dl>
+ <dl><dt><a name="-test_missclassification_images"><strong>test_missclassification_images</strong></a>(class_name, model, roi_dst_dir, class_names, CI_level, display_misclassification_images=False)</dt><dd><tt>test&nbsp;the&nbsp;misclassification&nbsp;ratio&nbsp;for&nbsp;given&nbsp;class<br>
+&nbsp;<br>
+parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class_name:&nbsp;string,&nbsp;the&nbsp;target&nbsp;class&nbsp;(right&nbsp;label)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model:&nbsp;CNN&nbsp;model&nbsp;object<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;roi_dst_dir:&nbsp;string,&nbsp;the&nbsp;path&nbsp;of&nbsp;the&nbsp;target&nbsp;folder&nbsp;want&nbsp;to&nbsp;do&nbsp;the&nbsp;test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CI_level:&nbsp;integer,&nbsp;the&nbsp;confident&nbsp;level&nbsp;we&nbsp;want&nbsp;to&nbsp;use&nbsp;for&nbsp;classification&nbsp;deicision&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display_misclassification_images:&nbsp;boolean,&nbsp;the&nbsp;default&nbsp;value&nbsp;is&nbsp;false</tt></dd></dl>
+ <dl><dt><a name="-train_visualize_CNN"><strong>train_visualize_CNN</strong></a>(epochs, train_ds, val_ds)</dt><dd><tt>Train&nbsp;CNN&nbsp;model:<br>
+The&nbsp;model&nbsp;consists&nbsp;of&nbsp;three&nbsp;`convolution&nbsp;blocks`&nbsp;with&nbsp;a&nbsp;`max&nbsp;pool&nbsp;layer`&nbsp;in&nbsp;each&nbsp;of&nbsp;them.&nbsp;<br>
+There's&nbsp;a&nbsp;fully&nbsp;connected&nbsp;layer&nbsp;with&nbsp;128&nbsp;units&nbsp;on&nbsp;top&nbsp;of&nbsp;it&nbsp;that&nbsp;is&nbsp;activated&nbsp;by&nbsp;a&nbsp;`relu`&nbsp;activation&nbsp;function.<br>
+&nbsp;<br>
+parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;epochs:&nbsp;(int)&nbsp;the&nbsp;number&nbsp;of&nbsp;epoch<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;train_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+output:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnn:&nbsp;the&nbsp;CNN&nbsp;model&nbsp;object&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnn_history:&nbsp;model&nbsp;history</tt></dd></dl>
+ <dl><dt><a name="-visualization_training_data"><strong>visualization_training_data</strong></a>(train_ds)</dt><dd><tt>visualize&nbsp;some&nbsp;training&nbsp;data<br>
+&nbsp;<br>
+train_ds:&nbsp;keras&nbsp;preprocessing&nbsp;image_dataset</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>abs_path</strong> = 'data/'<br>
+<strong>batch_size</strong> = 64<br>
+<strong>canny_low</strong> = 50<br>
+<strong>canny_upper</strong> = 150<br>
+<strong>class_names</strong> = ['stop/stop_simulator/', 'stop/stop_realWorld/', 'right/right_blue/', 'right/right_realWorldImage/', 'right/right_black/', 'left/left_blue/', 'left/left_real_worldImage/', 'left/left_black/', 'left/left_blue_f1/', 'park/park_green/', 'park/park_yellow/', 'speed_50_white/speed_50_white_simulator/', 'speed_50_white/speed_50_realworldImage/']<br>
+<strong>epochs</strong> = 8<br>
+<strong>folder</strong> = 'data'<br>
+<strong>img_height</strong> = 100<br>
+<strong>img_width</strong> = 100<br>
+<strong>kernel</strong> = array([[1, 1, 1],
+       [1, 1, 1],
+       [1, 1, 1]], dtype=uint8)<br>
+<strong>labels</strong> = ['left', 'park', 'right', 'speed_50_white', 'stop']<br>
+<strong>learning_rate</strong> = 0.001<br>
+<strong>lower_black_sign</strong> = array([95,  6, 40])<br>
+<strong>lower_blue_sign</strong> = array([ 90, 190, 150])<br>
+<strong>lower_blue_sign_bgr</strong> = array([50,  0,  0])<br>
+<strong>lower_green_park</strong> = array([ 43, 180, 130])<br>
+<strong>lower_orange2_cone</strong> = array([170,  60,  60])<br>
+<strong>lower_orange_cone</strong> = array([ 0, 60, 60])<br>
+<strong>lower_red2_stop</strong> = array([  6, 150, 100])<br>
+<strong>lower_red_stop</strong> = array([160,  75,  50])<br>
+<strong>lower_white_sign</strong> = array([  0,   0, 150])<br>
+<strong>lower_white_sign2</strong> = array([ 91,  10, 126])<br>
+<strong>lower_yello_park</strong> = array([ 25, 190, 165])<br>
+<strong>my_hsv_lower</strong> = array([100, 100,  30])<br>
+<strong>my_hsv_upper</strong> = array([125, 255, 160])<br>
+<strong>pent_turn_lower</strong> = array([ 20,   0, 121])<br>
+<strong>pent_turn_upper</strong> = array([179,  55, 153])<br>
+<strong>roi_test_misclass_path</strong> = 'data/test_roi/'<br>
+<strong>roi_test_path</strong> = 'data/testCNN_roi/'<br>
+<strong>roi_train_path</strong> = 'data/trainCNN_roi/'<br>
+<strong>stop_kernel</strong> = array([[1, 1, 1, 1, 1, 1, 1, 1, 1],
+       [1, 1...       [1, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=uint8)<br>
+<strong>testCNN_roi</strong> = '/testfilterCNN_roi'<br>
+<strong>test_path</strong> = 'data/test/'<br>
+<strong>trainCNN_roi</strong> = '/trainfilterCNN_roi'<br>
+<strong>train_path</strong> = 'data/train/'<br>
+<strong>upper_black_sign</strong> = array([115,  55,  90])<br>
+<strong>upper_blue_sign</strong> = array([120, 255, 255])<br>
+<strong>upper_blue_sign_bgr</strong> = array([255,  15,  15])<br>
+<strong>upper_green_park</strong> = array([ 46, 255, 255])<br>
+<strong>upper_orange2_cone</strong> = array([180, 180, 120])<br>
+<strong>upper_orange_cone</strong> = array([ 10, 180, 120])<br>
+<strong>upper_red2_stop</strong> = array([ 10, 255, 255])<br>
+<strong>upper_red_stop</strong> = array([180, 255, 255])<br>
+<strong>upper_white_sign</strong> = array([255,  55, 255])<br>
+<strong>upper_white_sign2</strong> = array([133,  67, 161])<br>
+<strong>upper_yello_park</strong> = array([ 29, 255, 255])</td></tr></table>
+</body></html>
