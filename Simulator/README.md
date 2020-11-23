@@ -5,9 +5,7 @@ This folder includes two documentations
 - Documentation of how to create 3D objects in Blender.
 ## Simulator
 ### Code and Assets
-The code and assets of our simulator is in the `/sdsandbox-master/sdsim` folder of our [simulator repository](https://github.sydney.edu.au/moxu7046/COMP3988_simulator), which is a unity project.
-
-We will not put the code and assets as it is too larget (more than 3GB) to be uploaded here.
+The code and assets of our simulator is in the `/sdsandbox-master/sdsim/Assets` folder.
 
 ### Release
-The release version of our simulator is in our simulator repository. Click [here](https://github.sydney.edu.au/moxu7046/COMP3988_simulator/releases) to download.
+The [release version](https://github.com/Yuanda-Dong/Client-Final-Deployment/releases) of our simulator was uploaded.
