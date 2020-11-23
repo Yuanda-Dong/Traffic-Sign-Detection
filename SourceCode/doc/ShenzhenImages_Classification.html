@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ShenzhenImages_Classification</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ShenzhenImages_Classification</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/yiranjing/Desktop/comp3988_t17b_group1/sign_detection_code/Yiran/ShenzhenImages_Classification.py">/Users/yiranjing/Desktop/comp3988_t17b_group1/sign_detection_code/Yiran/ShenzhenImages_Classification.py</a></font></td></tr></table>
+    <p><tt>Traffic&nbsp;Sign&nbsp;Classification&nbsp;using&nbsp;NN<br>
+&nbsp;<br>
+Author:&nbsp;Yiran&nbsp;Jing<br>
+Date:&nbsp;Nov&nbsp;2020<br>
+Group:&nbsp;CP32-17b1&nbsp;(COMP3988&nbsp;group&nbsp;1)</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PIL.Image.html">PIL.Image</a><br>
+<a href="PIL.ImageDraw.html">PIL.ImageDraw</a><br>
+<a href="PIL.ImageFont.html">PIL.ImageFont</a><br>
+<a href="PIL.html">PIL</a><br>
+<a href="config.html">config</a><br>
+</td><td width="25%" valign=top><a href="cv2.cv2.html">cv2.cv2</a><br>
+<a href="glob.html">glob</a><br>
+<a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+<a href="pathlib.html">pathlib</a><br>
+</td><td width="25%" valign=top><a href="platform.html">platform</a><br>
+<a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="shutil.html">shutil</a><br>
+<a href="seaborn.html">seaborn</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="tempfile.html">tempfile</a><br>
+<a href="tensorflow.html">tensorflow</a><br>
+<a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-listdir"><strong>listdir</strong></a>(path=None)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;containing&nbsp;the&nbsp;names&nbsp;of&nbsp;the&nbsp;files&nbsp;in&nbsp;the&nbsp;directory.<br>
+&nbsp;<br>
+path&nbsp;can&nbsp;be&nbsp;specified&nbsp;as&nbsp;either&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;a&nbsp;path-like&nbsp;object.&nbsp;&nbsp;If&nbsp;path&nbsp;is&nbsp;bytes,<br>
+&nbsp;&nbsp;the&nbsp;filenames&nbsp;returned&nbsp;will&nbsp;also&nbsp;be&nbsp;bytes;&nbsp;in&nbsp;all&nbsp;other&nbsp;circumstances<br>
+&nbsp;&nbsp;the&nbsp;filenames&nbsp;returned&nbsp;will&nbsp;be&nbsp;str.<br>
+If&nbsp;path&nbsp;is&nbsp;None,&nbsp;uses&nbsp;the&nbsp;path='.'.<br>
+On&nbsp;some&nbsp;platforms,&nbsp;path&nbsp;may&nbsp;also&nbsp;be&nbsp;specified&nbsp;as&nbsp;an&nbsp;open&nbsp;file&nbsp;descriptor;\<br>
+&nbsp;&nbsp;the&nbsp;file&nbsp;descriptor&nbsp;must&nbsp;refer&nbsp;to&nbsp;a&nbsp;directory.<br>
+&nbsp;&nbsp;If&nbsp;this&nbsp;functionality&nbsp;is&nbsp;unavailable,&nbsp;using&nbsp;it&nbsp;raises&nbsp;NotImplementedError.<br>
+&nbsp;<br>
+The&nbsp;list&nbsp;is&nbsp;in&nbsp;arbitrary&nbsp;order.&nbsp;&nbsp;It&nbsp;does&nbsp;not&nbsp;include&nbsp;the&nbsp;special<br>
+entries&nbsp;'.'&nbsp;and&nbsp;'..'&nbsp;even&nbsp;if&nbsp;they&nbsp;are&nbsp;present&nbsp;in&nbsp;the&nbsp;directory.</tt></dd></dl>
+ <dl><dt><a name="-rename"><strong>rename</strong></a>(src, dst, *, src_dir_fd=None, dst_dir_fd=None)</dt><dd><tt>Rename&nbsp;a&nbsp;file&nbsp;or&nbsp;directory.<br>
+&nbsp;<br>
+If&nbsp;either&nbsp;src_dir_fd&nbsp;or&nbsp;dst_dir_fd&nbsp;is&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a&nbsp;file<br>
+&nbsp;&nbsp;descriptor&nbsp;open&nbsp;to&nbsp;a&nbsp;directory,&nbsp;and&nbsp;the&nbsp;respective&nbsp;path&nbsp;string&nbsp;(src&nbsp;or&nbsp;dst)<br>
+&nbsp;&nbsp;should&nbsp;be&nbsp;relative;&nbsp;the&nbsp;path&nbsp;will&nbsp;then&nbsp;be&nbsp;relative&nbsp;to&nbsp;that&nbsp;directory.<br>
+src_dir_fd&nbsp;and&nbsp;dst_dir_fd,&nbsp;may&nbsp;not&nbsp;be&nbsp;implemented&nbsp;on&nbsp;your&nbsp;platform.<br>
+&nbsp;&nbsp;If&nbsp;they&nbsp;are&nbsp;unavailable,&nbsp;using&nbsp;them&nbsp;will&nbsp;raise&nbsp;a&nbsp;NotImplementedError.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>AUTOTUNE</strong> = -1<br>
+<strong>abs_path</strong> = 'data/'<br>
+<strong>batch_size</strong> = 64<br>
+<strong>class_folders</strong> = ['stop/stop_simulator/', 'stop/stop_realWorld/', 'right/right_blue/', 'right/right_realWorldImage/', 'left/left_blue/', 'left/left_real_worldImage/', 'park/park_green/', 'park/park_yellow/', 'park/park_realWorld/', 'speed_50_white/speed_50_white_simulator/', 'speed_50_white/speed_50_realworldImage/']<br>
+<strong>class_name</strong> = 'park'<br>
+<strong>cnn</strong> = &lt;tensorflow.python.keras.engine.sequential.Sequential object&gt;<br>
+<strong>fail_openCV</strong> = 'data/fail_openCV/'<br>
+<strong>folder</strong> = 'data'<br>
+<strong>image_count</strong> = 6<br>
+<strong>img_height</strong> = 100<br>
+<strong>img_width</strong> = 100<br>
+<strong>labels</strong> = ['left', 'park', 'right', 'speed_50_white', 'stop']<br>
+<strong>learning_rate</strong> = 0.001<br>
+<strong>path</strong> = 'data/shenzhen_roi_filter/park'<br>
+<strong>roi_test_path</strong> = 'data/testCNN_roi/'<br>
+<strong>roi_train_path</strong> = 'data/trainCNN_roi/'<br>
+<strong>test_data_dir</strong> = PosixPath('data/shenzhen_roi_filter')<br>
+<strong>test_ds</strong> = &lt;PrefetchDataset shapes: ((None, 100, 100, 3), (None,)), types: (tf.float32, tf.int32)&gt;<br>
+<strong>test_path</strong> = 'data/test/'<br>
+<strong>train_path</strong> = 'data/train/'</td></tr></table>
+</body></html>

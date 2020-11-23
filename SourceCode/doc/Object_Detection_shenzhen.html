@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Object_Detection_shenzhen</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Object_Detection_shenzhen</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/yiranjing/Desktop/comp3988_t17b_group1/sign_detection_code/Yiran/Object_Detection_shenzhen.py">/Users/yiranjing/Desktop/comp3988_t17b_group1/sign_detection_code/Yiran/Object_Detection_shenzhen.py</a></font></td></tr></table>
+    <p><tt>OpenCV&nbsp;module&nbsp;for&nbsp;Color-based&nbsp;object&nbsp;detection&nbsp;for&nbsp;shenzhen&nbsp;images<br>
+&nbsp;<br>
+Date:&nbsp;Nov&nbsp;2020<br>
+Author:&nbsp;Yuanda&nbsp;Dong,&nbsp;Yiran&nbsp;Jing<br>
+Group:&nbsp;CP32-17b1&nbsp;(COMP3988&nbsp;group&nbsp;1)</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="config.html">config</a><br>
+<a href="cv2.cv2.html">cv2.cv2</a><br>
+<a href="glob.html">glob</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+<a href="platform.html">platform</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="shutil.html">shutil</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="tempfile.html">tempfile</a><br>
+<a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-collect_contours_area"><strong>collect_contours_area</strong></a>(contours, frame)</dt></dl>
+ <dl><dt><a name="-create_or_empty_dir"><strong>create_or_empty_dir</strong></a>(dir_name)</dt><dd><tt>helper&nbsp;function&nbsp;for&nbsp;test_images<br>
+&nbsp;<br>
+create&nbsp;the&nbsp;folder&nbsp;if&nbsp;the&nbsp;given&nbsp;folder&nbsp;path&nbsp;not&nbsp;exits,<br>
+clean&nbsp;the&nbsp;old&nbsp;foler&nbsp;if&nbsp;it&nbsp;already&nbsp;exist.</tt></dd></dl>
+ <dl><dt><a name="-detect_blue"><strong>detect_blue</strong></a>(frame, hsv)</dt><dd><tt>Reference&nbsp;Cian's&nbsp;code&nbsp;<br>
+Expects:&nbsp;HSV&nbsp;image&nbsp;of&nbsp;any&nbsp;shape&nbsp;+&nbsp;current&nbsp;frame<br>
+Returns:&nbsp;TBD</tt></dd></dl>
+ <dl><dt><a name="-detect_blue1"><strong>detect_blue1</strong></a>(frame, hsv)</dt><dd><tt>reference&nbsp;group&nbsp;cp31&nbsp;code<br>
+detect&nbsp;the&nbsp;blue&nbsp;color&nbsp;sign</tt></dd></dl>
+ <dl><dt><a name="-detect_green"><strong>detect_green</strong></a>(frame, hsv)</dt><dd><tt>Green&nbsp;sign&nbsp;detection</tt></dd></dl>
+ <dl><dt><a name="-detect_interested_area"><strong>detect_interested_area</strong></a>(frame)</dt><dd><tt>Expect&nbsp;to&nbsp;detect&nbsp;the&nbsp;interest&nbsp;area<br>
+Then&nbsp;run&nbsp;it&nbsp;using&nbsp;TF&nbsp;model&nbsp;<br>
+&nbsp;<br>
+Parameter:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame:&nbsp;the&nbsp;frame&nbsp;of&nbsp;input&nbsp;image<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Return:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rois:&nbsp;the&nbsp;extract&nbsp;interesed&nbsp;areas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;result:&nbsp;true&nbsp;or&nbsp;false</tt></dd></dl>
+ <dl><dt><a name="-detect_red"><strong>detect_red</strong></a>(frame, hsv)</dt><dd><tt>Expects:&nbsp;HSV&nbsp;image&nbsp;of&nbsp;any&nbsp;shape&nbsp;+&nbsp;current&nbsp;frame<br>
+Returns:&nbsp;the&nbsp;ROI&nbsp;with&nbsp;the&nbsp;biggest&nbsp;area</tt></dd></dl>
+ <dl><dt><a name="-is_squarish"><strong>is_squarish</strong></a>(height, width)</dt></dl>
+ <dl><dt><a name="-load_images_from_folder"><strong>load_images_from_folder</strong></a>(folder)</dt><dd><tt>Load&nbsp;all&nbsp;images&nbsp;within&nbsp;the&nbsp;given&nbsp;folder<br>
+&nbsp;<br>
+Return:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;list&nbsp;of&nbsp;images&nbsp;path</tt></dd></dl>
+ <dl><dt><a name="-save_fail_iamges"><strong>save_fail_iamges</strong></a>(fail_image_collection, dst_dir)</dt><dd><tt>Save&nbsp;the&nbsp;fail&nbsp;images&nbsp;to&nbsp;the&nbsp;given&nbsp;folder&nbsp;(dst_dir)<br>
+&nbsp;<br>
+parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fail_image_collection:&nbsp;the&nbsp;list&nbsp;of&nbsp;fail&nbsp;images<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dst_dir:&nbsp;the&nbsp;direct&nbsp;path&nbsp;we&nbsp;want&nbsp;to&nbsp;used&nbsp;to&nbsp;save&nbsp;the&nbsp;fail&nbsp;images</tt></dd></dl>
+ <dl><dt><a name="-save_roi_images"><strong>save_roi_images</strong></a>(roi_dst_dir, image, image_name)</dt><dd><tt>Save&nbsp;the&nbsp;roi&nbsp;to&nbsp;the&nbsp;dst_dir</tt></dd></dl>
+ <dl><dt><a name="-test_images"><strong>test_images</strong></a>(folder_path, roi_dst_dir, num_visualize=0)</dt><dd><tt>Test&nbsp;the&nbsp;success&nbsp;rate&nbsp;of&nbsp;detecting&nbsp;the&nbsp;interested&nbsp;area&nbsp;of&nbsp;the&nbsp;images&nbsp;in&nbsp;the&nbsp;given&nbsp;folder<br>
+And&nbsp;save&nbsp;the&nbsp;roi&nbsp;to&nbsp;the&nbsp;dst_dir<br>
+&nbsp;<br>
+Parameter:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;folder_path:&nbsp;the&nbsp;input&nbsp;image&nbsp;folder&nbsp;path<br>
+&nbsp;&nbsp;&nbsp;&nbsp;roi_dst_dir:&nbsp;the&nbsp;desired&nbsp;path&nbsp;for&nbsp;roi&nbsp;collection<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num_visualize:&nbsp;the&nbsp;number&nbsp;of&nbsp;detected&nbsp;images&nbsp;we&nbsp;want&nbsp;to&nbsp;visualize&nbsp;to&nbsp;check&nbsp;the&nbsp;result</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>c</strong> = array([179,  55, 153])<br>
+<strong>canny_low</strong> = 50<br>
+<strong>canny_upper</strong> = 150<br>
+<strong>kernel</strong> = array([[1, 1, 1],
+       [1, 1, 1],
+       [1, 1, 1]], dtype=uint8)<br>
+<strong>lower_blue_sign</strong> = array([90, 70, 40])<br>
+<strong>lower_blue_sign2</strong> = array([110,  30, 110])<br>
+<strong>lower_blue_sign_bgr</strong> = array([50,  0,  0])<br>
+<strong>lower_green_park</strong> = array([60, 55, 55])<br>
+<strong>lower_red2_stop</strong> = array([  0, 150, 100])<br>
+<strong>lower_red_stop</strong> = array([160,  75,  50])<br>
+<strong>lower_white_sign</strong> = array([  0,   0, 150])<br>
+<strong>stop_kernel</strong> = array([[1, 1, 1, 1, 1, 1, 1, 1, 1],
+       [1, 1...       [1, 1, 1, 1, 1, 1, 1, 1, 1]], dtype=uint8)<br>
+<strong>upper_blue_sign</strong> = array([140, 255, 255])<br>
+<strong>upper_blue_sign2</strong> = array([160, 255, 255])<br>
+<strong>upper_blue_sign_bgr</strong> = array([255,  15,  15])<br>
+<strong>upper_green_park</strong> = array([ 90, 130, 150])<br>
+<strong>upper_red2_stop</strong> = array([ 10, 255, 255])<br>
+<strong>upper_red_stop</strong> = array([180, 255, 255])<br>
+<strong>upper_white_sign</strong> = array([255,  55, 255])</td></tr></table>
+</body></html>
