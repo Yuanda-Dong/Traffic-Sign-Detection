@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: 1ac0872dcad57c44496bb684aa1998f8
+  - enabled: 1
+    path: Assets/Scenes/road_generator.unity
+    guid: 80ac5eef166784810a0ab8e6742f8a30
+  - enabled: 1
+    path: Assets/Scenes/warehouse.unity
+    guid: 4483f94080df5d84f9e98fdae085f167
+  - enabled: 1
+    path: Assets/Scenes/avc2.unity
+    guid: b362fdcb28a444fa5b719f21d5115c5a
+  - enabled: 1
+    path: Assets/Scenes/small_looping_course.unity
+    guid: b003bdd73179fe046b15d779a91c20e8
+  - enabled: 1
+    path: Assets/Scenes/mountain_track.unity
+    guid: fa958af1d4fc8ef449b0c7b710692aad
+  - enabled: 1
+    path: Assets/Scenes/roboracingleague_1.unity
+    guid: b37ac42fbc7419143a38115aec8b91ba
+  - enabled: 1
+    path: Assets/Scenes/test_track.unity
+    guid: 56e273e930d6e164fb63f88f5ae487af
+  - enabled: 1
+    path: Assets/Scenes/test_track_1.unity
+    guid: 1aa6899620b77f945993c32bb40f3d89
+  - enabled: 1
+    path: Assets/Scenes/test_track_2.unity
+    guid: 239281b96db08e444b7f26a7ea21cd49
+  - enabled: 1
+    path: Assets/Scenes/f1_melbourne.unity
+    guid: e94bbbf6e0f6b9d428a08a9185034d9d
+  - enabled: 1
+    path: Assets/Scenes/f1_shanghai.unity
+    guid: bccf9f7fc3d8ec34eac0a6b30201bfb9
+  - enabled: 1
+    path: Assets/Scenes/test_track_3.unity
+    guid: e1a4a1340efeffa4287fb2f300e07199
+  - enabled: 1
+    path: Assets/Scenes/test_track_4.unity
+    guid: 809bffb4b64b0d5458e573f91ff08ec8
+  - enabled: 1
+    path: Assets/Scenes/sign_melbourne.unity
+    guid: caac62abb42d4ab4a9e84a808fa2a423
+  - enabled: 1
+    path: Assets/Scenes/sign_shanghai.unity
+    guid: a77603b1ab818a54f9c95cdc206787cc
+  m_configObjects: {}
