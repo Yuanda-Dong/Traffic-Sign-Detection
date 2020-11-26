@@ -4,7 +4,9 @@
 
 ## Project Description
 
-We are moving closer to autonomous cars and drones every day and finding new ways of using AI in the real world in other applications (fighting pandemics, object classification). In this project, we will implement both a real word and simulated world traffic sign detection algorithms using a combination of computer vision (openCV) Neural Network (TensorFlow). The simulated data will be collect using Donkey Car simulator, and there is another project component focusing on simulator improvements. We looked at different algorithms to come up with robust and efficient solution.
+We are moving closer to autonomous cars and drones every day and finding new ways of using AI in the real world in other applications (fighting pandemics, object classification). 
+
+In this project, we will implement both a real word and simulated world traffic sign detection algorithms using a combination of computer vision (openCV) Neural Network (TensorFlow). The simulated data will be collect using Donkey Car simulator, and there is another project component focusing on simulator improvements. We looked at different algorithms to come up with robust and efficient solution.
 
 ---
 ## Documents
