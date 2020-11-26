@@ -60,13 +60,3 @@ In this project, we will implement both a real word and simulated world traffic 
 1. [Simulator](https://github.com/Yuanda-Dong/Client-Final-Deployment/tree/main/Simulator)
 2. [Source code of Sign Detection Model](https://github.com/Yuanda-Dong/Client-Final-Deployment/tree/main/SourceCode)
 3. [RMracerlib](https://github.com/Yuanda-Dong/Client-Final-Deployment/tree/main/rmracerlib)
-
-
-## Goal & Deliverables
-
-`TODO @wallarug:  insert table of deliverables for each project`
-
-## Testing Results
-
-`TODO @wallarug: insert table of testing for each project with link to data.`
-
