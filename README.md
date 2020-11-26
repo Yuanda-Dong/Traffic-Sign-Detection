@@ -50,7 +50,7 @@ In this project, we will implement both a real word and simulated world traffic 
 | First client deployment  | [YouTube](https://www.youtube.com/watch?v=_W_JX03uFBE&list=PLfwiy0wVlGXwtHwRymVrPehrioXkUKPEg&index=6&t=2008s) |
 | Final client deployment  | [YouTube](https://www.youtube.com/watch?v=6H6geVCDLH8), starting from 1:05:40 |
 | First demo video for uni | [YouTube](https://www.youtube.com/watch?v=v1NtHFMFIjQ&feature=emb_logo) |
-| Final demo video for uni | [Youtube](https://www.youtube.com/watch?v=eCw6QChhvj4&feature=youtu.be) |
+| Final demo video for uni | [YouTube](https://www.youtube.com/watch?v=eCw6QChhvj4&feature=youtu.be) |
 | Project showreel         | [YouTube](https://www.youtube.com/watch?v=VxKC9a5ixNI&feature=youtu.be) |
 
 
