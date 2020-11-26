@@ -11,8 +11,6 @@ In this project, we will implement both a real word and simulated world traffic 
 ---
 ## Documents
 
-`insert the link to the specification documents as per the README.md on the capstone2020 repository`
-
 - [Proposal Document](https://github.com/wallarug/capstone2020/blob/master/proposals/CP32%20-%20Project%20Proposal.pdf)
 - [Requirements Document](https://github.com/wallarug/capstone2020/blob/master/requirements/CP32%20-%20Scope%20and%20Requirements%20Document%20September%202020.pdf)
 - [Updated Requirements Document](https://github.com/wallarug/capstone2020/blob/master/requirements/CP31%20and%20CP32%20-%20Further%20Scope%20Information%20for%20Simulator.pdf)
